@@ -1,76 +1,129 @@
-# Kartik Bajaj - Portfolio (kbxai)
+\documentclass[11pt]{article}
 
-A visually immersive, high-performance personal portfolio website built with React, Three.js, and Tailwind CSS. This project showcases my work as a Data Science student and AI enthusiast through a modern, cinematic web experience.
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{xcolor}
 
-## 🚀 Live Demo
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
 
-[Insert Link to Live Site Here]
+\lstset{
+  backgroundcolor=\color{codegray},
+  basicstyle=\ttfamily\small,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
 
-## ✨ Features
+\setstretch{1.15}
 
-- **3D Interactive Background**: A performant, drifting star field using `Three.js` and `@react-three/fiber`, featuring depth parallax and additive blending.
-- **Cinematic UI/UX**: Custom film grain noise overlay, "floating island" navigation, and glassmorphism effects for a premium feel.
-- **Custom Cursor**: A physics-based magnetic cursor with reactive hover states and spring animations using `Framer Motion`.
-- **Advanced Animations**: Staggered content reveals, smooth scrolling behaviors, and editorial typography transitions.
-- **Responsive Design**: Fully responsive layout that adapts gracefully from mobile devices to large desktop screens.
+\title{\textbf{Kartik Bajaj --- Portfolio (kbxai)}}
+\author{}
+\date{}
 
-## 🛠️ Tech Stack
+\begin{document}
+\maketitle
 
-- **Core**: React 18, TypeScript
-- **Styling**: Tailwind CSS
-- **3D & Graphics**: Three.js, React Three Fiber, React Three Drei
-- **Motion & Physics**: Framer Motion
-- **Icons**: Lucide React
+\section*{Overview}
 
-## 📂 Project Structure
+A visually immersive, high-performance personal portfolio website built with \textbf{React}, \textbf{Three.js}, and \textbf{Tailwind CSS}.  
+The project presents my work as a Data Science student and AI enthusiast through a modern, cinematic web experience focused on performance, interaction, and design precision.
 
-```bash
-├── components/         # React components
-│   ├── CustomCursor.tsx # Custom physics-based cursor
-│   ├── Hero.tsx         # Landing section with 3D background
-│   ├── Navbar.tsx       # Floating navigation bar
-│   ├── Projects.tsx     # Masonry grid project display
-│   ├── Scene3D.tsx      # Three.js starfield configuration
+\section*{Live Demo}
+
+\noindent
+\textbf{Website:}  
+\href{https://kbxai-portfolio.onrender.com/}{https://kbxai-portfolio.onrender.com/}
+
+\section*{Features}
+
+\begin{itemize}
+  \item \textbf{3D Interactive Background} \\
+  High-performance drifting starfield built using Three.js and \texttt{@react-three/fiber}, featuring depth-based parallax and additive blending.
+
+  \item \textbf{Cinematic UI/UX} \\
+  Film-grain noise overlay, floating island–style navigation, and glassmorphism effects for a refined, premium aesthetic.
+
+  \item \textbf{Custom Cursor System} \\
+  Physics-based magnetic cursor with reactive hover states and spring animations implemented using Framer Motion.
+
+  \item \textbf{Advanced Motion Design} \\
+  Staggered content reveals, smooth scrolling behavior, and editorial-style typography transitions.
+
+  \item \textbf{Responsive Layout} \\
+  Fully responsive design that scales seamlessly from mobile devices to large desktop screens.
+\end{itemize}
+
+\section*{Tech Stack}
+
+\begin{itemize}
+  \item \textbf{Core:} React 18, TypeScript
+  \item \textbf{Styling:} Tailwind CSS
+  \item \textbf{3D \& Graphics:} Three.js, React Three Fiber, React Three Drei
+  \item \textbf{Motion \& Animation:} Framer Motion
+  \item \textbf{Icons:} Lucide React
+\end{itemize}
+
+\section*{Project Structure}
+
+\begin{lstlisting}
+├── components/
+│   ├── CustomCursor.tsx   # Physics-based custom cursor
+│   ├── Hero.tsx           # Landing section with 3D background
+│   ├── Navbar.tsx         # Floating navigation bar
+│   ├── Projects.tsx       # Masonry-style project grid
+│   ├── Scene3D.tsx        # Three.js starfield configuration
 │   └── ...
-├── constants.ts        # Content data (Resume, Projects, Skills)
-├── types.ts            # TypeScript interfaces
-├── App.tsx             # Main application layout
-├── index.tsx           # Entry point
-└── index.html          # HTML shell & tailwind config
-```
+├── constants.ts           # Content data (resume, projects, skills)
+├── types.ts               # TypeScript interfaces
+├── App.tsx                # Main application layout
+├── index.tsx              # Entry point
+└── index.html             # HTML shell and Tailwind configuration
+\end{lstlisting}
 
-## 🚀 Running Locally
+\section*{Running Locally}
 
-This project uses modern ES Modules via CDN (`esm.sh`) for a lightweight, build-free development experience.
+This project uses modern ES Modules via CDN (\texttt{esm.sh}) to enable a lightweight, build-free development workflow.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/kbxai/portfolio.git
-   cd portfolio
-   ```
+\subsection*{1. Clone the Repository}
 
-2. **Serve the directory**
-   You can use any static file server.
+\begin{lstlisting}
+git clone https://github.com/kbxai/portfolio.git
+cd portfolio
+\end{lstlisting}
 
-   **Using Python:**
-   ```bash
-   python3 -m http.server 8000
-   ```
-   
-   **Using Node (http-server):**
-   ```bash
-   npx http-server .
-   ```
+\subsection*{2. Serve the Directory}
 
-3. **Open in Browser**
-   Navigate to `http://localhost:8000` to view the application.
+Any static file server can be used.
 
-## 📬 Contact
+\textbf{Using Python:}
+\begin{lstlisting}
+python3 -m http.server 8000
+\end{lstlisting}
 
-- **Email**: [kartikbajaj.me@gmail.com](mailto:kartikbajaj.me@gmail.com)
-- **LinkedIn**: [Kartik Bajaj](https://www.linkedin.com/in/kartik-bajaj-3ababa372/)
-- **GitHub**: [kbxai](https://github.com/kbxai)
+\textbf{Using Node (http-server):}
+\begin{lstlisting}
+npx http-server .
+\end{lstlisting}
 
-## 📄 License
+\subsection*{3. Open in Browser}
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+\noindent
+Navigate to: \\
+\texttt{http://localhost:8000}
+
+\section*{Contact}
+
+\begin{itemize}
+  \item \textbf{Email:} \href{mailto:kartikbajaj.me@gmail.com}{kartikbajaj.me@gmail.com}
+  \item \textbf{LinkedIn:} \href{https://www.linkedin.com/in/kartik-bajaj-3ababa372/}{Kartik Bajaj}
+  \item \textbf{GitHub:} \href{https://github.com/kbxai}{kbxai}
+\end{itemize}
+
+\section*{License}
+
+This project is licensed under the \textbf{MIT License}.  
+See the \texttt{LICENSE} file for details.
+
+\end{document}
