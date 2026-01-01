@@ -24,13 +24,13 @@ export const RESUME_DATA: ResumeData = {
       degree: "Bachelor of Science in Data Science",
       institution: "Indian Institute of Technology Madras",
       duration: "2024 – 2027",
-      grade: "CGPA: 7.77/10"
+      grade: "CGPA: 8.11/10"
     },
     {
       degree: "Higher Secondary Certificate",
       institution: "S.A. Jain Sr. Model School",
       duration: "2023 – 2024",
-      grade: "Grade: 88%"
+      grade: "Grade: 9"
     }
   ],
   skills: [
