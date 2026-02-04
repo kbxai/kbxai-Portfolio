@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kartik Bajaj | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              accent: {
+                cyan: '#00F0FF',
+                orange: '#FF4D00',
+                purple: '#7000FF'
+              },
+              dark: {
+                deep: '#030303',
+                card: '#080808',
+                border: 'rgba(255, 255, 255, 0.05)'
+              }
+            },
+            animation: {
+              'blob': 'blob 10s infinite',
+              'soft-pulse': 'soft-pulse 3s ease-in-out infinite',
+              'glow': 'glow 4s ease-in-out infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%, 100%': { transform: 'translate(0px, 0px) scale(1)', opacity: 0.1 },
+                '33%': { transform: 'translate(50px, -70px) scale(1.1)', opacity: 0.15 },
+                '66%': { transform: 'translate(-30px, 30px) scale(0.9)', opacity: 0.1 },
+              },
+              'soft-pulse': {
+                '0%, 100%': { transform: 'scale(1)', opacity: '0.4' },
+                '50%': { transform: 'scale(1.2)', opacity: '0.1' },
+              },
+              glow: {
+                '0%, 100%': { filter: 'brightness(1)' },
+                '50%': { filter: 'brightness(1.5)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Hide cursor only on non-touch devices */
+      @media (hover: hover) and (pointer: fine) {
+        body {
+          cursor: none;
+        }
+      }
+      
+      body {
+        overflow-x: hidden;
+        background-color: #030303;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #030303;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #111;
+        border-radius: 10px;
+        transition: background 0.3s;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #222;
+      }
+
+      .noise-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        pointer-events: none;
+        opacity: 0.015;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.02);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .text-gradient {
+        background: linear-gradient(135deg, #fff 0%, #888 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div class="noise-overlay"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
