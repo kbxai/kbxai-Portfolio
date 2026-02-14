@@ -143,7 +143,7 @@ export const SKILLS_MATRIX = [
   },
   {
     category: "Frontend & Tools",
-    skills: ["HTML/CSS", "Vue.js", "Bootstrap", "Git/GitHub", "Linux", "OpenAI/Gemini API"],
+    skills: ["HTML/CSS", "Vue.js","JS", "Bootstrap", "Git/GitHub", "Linux", "OpenAI/Gemini API"],
     theme: "neutral"
   }
 ];

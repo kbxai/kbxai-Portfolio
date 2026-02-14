@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { PORTFOLIO_DATA, SKILLS_MATRIX } from './constants';
 import Layout from './components/Layout';
@@ -366,9 +365,10 @@ function App() {
                   </div>
                   
                   <div className="flex justify-center gap-16 mb-32 border-b border-white/5 pb-16 opacity-60 hover:opacity-100 transition-opacity">
-                    {['GitHub', 'LinkedIn', 'Resume', 'Contact'].map((p) => (
-                      <a key={p} href="#" className="text-[10px] font-mono uppercase tracking-[0.6em] text-gray-600 hover:text-white transition-all hover:scale-110">{p}</a>
-                    ))}
+                    <a href={`https://${PORTFOLIO_DATA.personal.github}`} target="_blank" className="text-[10px] font-mono uppercase tracking-[0.6em] text-gray-600 hover:text-white transition-all hover:scale-110">GitHub</a>
+                    <a href={`https://${PORTFOLIO_DATA.personal.linkedin}`} target="_blank" className="text-[10px] font-mono uppercase tracking-[0.6em] text-gray-600 hover:text-white transition-all hover:scale-110">LinkedIn</a>
+                    <a href="https://drive.google.com/file/d/1YepWe1Cn013JRxZWHNmWMyDHI1Ytor0x/view?usp=sharing" target="_blank" className="text-[10px] font-mono uppercase tracking-[0.6em] text-gray-600 hover:text-white transition-all hover:scale-110">Resume</a>
+                    <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="text-[10px] font-mono uppercase tracking-[0.6em] text-gray-600 hover:text-white transition-all hover:scale-110">Contact</a>
                   </div>
                   
                   <div className="flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-800 font-mono tracking-[0.6em] uppercase gap-6">
