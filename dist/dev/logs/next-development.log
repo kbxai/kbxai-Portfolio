@@ -1,0 +1,6 @@
+{"timestamp":"00:00:01.074","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:02.991","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:03.680","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:04.299","source":"Server","level":"ERROR","message":"⨯ Error: export const dynamic = \"force-static\"/export const revalidate not configured on route \"/icon\" with \"output: export\". See more info here: https://nextjs.org/docs/advanced-features/static-html-export"}
+{"timestamp":"00:00:04.543","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:05.159","source":"Server","level":"ERROR","message":"⨯ Error: export const dynamic = \"force-static\"/export const revalidate not configured on route \"/icon\" with \"output: export\". See more info here: https://nextjs.org/docs/advanced-features/static-html-export"}
