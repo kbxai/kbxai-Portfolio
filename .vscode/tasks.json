@@ -1,0 +1,90 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Move files",
+			"type": "shell",
+			"command": "cmd.exe /c \"xcopy tmp-app . /E /H /Y /C && rd /s /q tmp-app\""
+		},
+		{
+			"label": "Move using python",
+			"type": "shell",
+			"command": "python -c \"import shutil, os; [shutil.move(os.path.join('tmp-app', f), '.') for f in os.listdir('tmp-app')]; os.rmdir('tmp-app')\""
+		},
+		{
+			"label": "Run move",
+			"type": "shell",
+			"command": "node move.js"
+		},
+		{
+			"label": "Run move2",
+			"type": "shell",
+			"command": "node move2.js"
+		},
+		{
+			"label": "Overwrite page.tsx",
+			"type": "shell",
+			"command": "node -e \"const fs=require('fs'); fs.writeFileSync('src/app/page.tsx', \\`import { Suspense } from 'react';\\nimport Projects from '@/components/Projects';\\n\\nexport default function Home() {\\n  return (\\n    <div className='min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 selection:bg-blue-500 selection:text-white pb-12'>\\n      {/* Navbar */}\\n      <nav className='sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80'>\\n        <div className='container mx-auto px-4 sm:px-6 lg:px-8'>\\n          <div className='flex h-16 items-center justify-between'>\\n            <span className='text-xl font-bold tracking-tight'>kbxai</span>\\n            <div className='flex gap-4'>\\n              <a href='#about' className='text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400'>About</a>\\n              <a href='#projects' className='text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400'>Projects</a>\\n            </div>\\n          </div>\\n        </div>\\n      </nav>\\n\\n      <main className='container mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-24'>\\n        {/* Hero Section */}\\n        <section id='hero' className='flex flex-col items-center justify-center text-center pt-16'>\\n          <h1 className='text-5xl font-extrabold tracking-tight sm:text-7xl mb-6'>\\n            Hi, I'm <span className='text-blue-600 dark:text-blue-400'>Kartik Bajaj</span>\\n          </h1>\\n          <p className='text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-8'>\\n            Data Science undergraduate at IIT Madras & AI Full Stack Engineer.\\n            I combine backend systems with AI capabilities to build intelligent web applications.\\n          </p>\\n          <div className='flex flex-wrap gap-4 justify-center'>\\n            <a href='/AI%20Full%20Stack%20Resume.pdf' target='_blank' rel='noopener noreferrer' className='px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition'>\\n              Download Resume\\n            </a>\\n            <a href='https://github.com/kbxai' target='_blank' rel='noopener noreferrer' className='px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 font-medium transition'>\\n              GitHub Profile\\n            </a>\\n            <a href='https://linkedin.com/in/kbxai' target='_blank' rel='noopener noreferrer' className='px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900 font-medium transition'>\\n              LinkedIn\\n            </a>\\n          </div>\\n        </section>\\n\\n        {/* About & Skills */}\\n        <section id='about' className='grid md:grid-cols-2 gap-12 items-center'>\\n          <div>\\n            <h2 className='text-3xl font-bold mb-4'>About Me</h2>\\n            <p className='text-gray-600 dark:text-gray-400 mb-4'>\\n              I\\\\'m a passionate developer currently pursuing a BS in Data Science at IIT Madras.\\n              My focus is on creating end-to-end full stack platforms that leverage powerful AI & ML backends to solve real-world problems.\\n            </p>\\n            <p className='text-gray-600 dark:text-gray-400'>\\n              I\\\\'ve built robust systems ranging from Hospital Management Systems to LLM-powered deployment agents and complex data pipelines. Let\\\\'s build something amazing!\\n            </p>\\n          </div>\\n          <div>\\n            <h3 className='text-xl font-bold mb-4'>Technical Arsenal</h3>\\n            <div className='flex flex-wrap gap-2'>\\n              {['Python', 'FastAPI', 'Flask', 'Next.js', 'React', 'Vue.js', 'SQL', 'Scikit-Learn', 'NLP', 'OpenAI/Gemini API', 'Git/GitHub'].map(skill => (\\n                <span key={skill} className='px-3 py-1 bg-gray-200 dark:bg-gray-800 text-sm font-medium rounded-full'>\\n                  {skill}\\n                </span>\\n              ))}\\n            </div>\\n          </div>\\n        </section>\\n\\n        {/* Projects Section */}\\n        <section id='projects'>\\n          <div className='mb-10 text-center'>\\n            <h2 className='text-3xl font-bold'>Featured Projects</h2>\\n            <p className='text-gray-600 dark:text-gray-400 mt-2'>Fetched dynamically from GitHub</p>\\n          </div>\\n          <Suspense fallback={<div className='text-center'>Loading projects...</div>}>\\n            <Projects />\\n          </Suspense>\\n        </section>\\n      </main>\\n\\n      {/* Footer */}\\n      <footer className='border-t border-gray-200 dark:border-gray-800 py-8 mt-12 text-center text-gray-500'>\\n        <p>© {new Date().getFullYear()} Kartik Bajaj. All Rights Reserved.</p>\\n        <p className='mt-2 text-sm'>\\n          <a href='mailto:kartikbajaj.me@gmail.com' className='hover:text-blue-500'>kartikbajaj.me@gmail.com</a>\\n        </p>\\n      </footer>\\n    </div>\\n  );\\n} \\`)\\\""
+		},
+		{
+			"label": "Update layout",
+			"type": "shell",
+			"command": "node -e \"const fs=require('fs'); let c = fs.readFileSync('src/app/layout.tsx', 'utf8'); c = c.replace('Create Next App', 'Kartik Bajaj - AI Full Stack Engineer').replace('Generated by create next app', 'Portfolio of Kartik Bajaj, Data Science undergraduate at IIT Madras and AI Full Stack Engineer.'); fs.writeFileSync('src/app/layout.tsx', c);\""
+		},
+		{
+			"label": "Install Dependencies",
+			"type": "shell",
+			"command": "npm install framer-motion clsx tailwind-merge lucide-react"
+		},
+		{
+			"label": "Install Dependencies CMD",
+			"type": "shell",
+			"command": "npm.cmd install framer-motion clsx tailwind-merge lucide-react"
+		},
+		{
+			"label": "Write globals.css",
+			"type": "shell",
+			"command": "node -e \"const fs=require('fs'); fs.writeFileSync('src/app/globals.css', \\`@import 'tailwindcss';\\n\\n:root {\\n  --background: #05050A;\\n  --foreground: #ffffff;\\n}\\n\\n@theme inline {\\n  --color-background: var(--background);\\n  --color-foreground: var(--foreground);\\n  --font-sans: var(--font-geist-sans);\\n  --font-mono: var(--font-geist-mono);\\n}\\n\\nbody {\\n  background: var(--background);\\n  color: var(--foreground);\\n  font-family: Arial, Helvetica, sans-serif;\\n  -webkit-font-smoothing: antialiased;\\n}\\n\\n/* Antigravity effects */\\n.glass {\\n  background: rgba(255, 255, 255, 0.03);\\n  backdrop-filter: blur(16px);\\n  -webkit-backdrop-filter: blur(16px);\\n  border: 1px solid rgba(255, 255, 255, 0.05);\\n}\\n\\n.ambient-orb {\\n  position: absolute;\\n  border-radius: 50%;\\n  filter: blur(120px);\\n  z-index: -1;\\n  opacity: 0.3;\\n  animation: float 20s infinite ease-in-out alternate;\\n}\\n\\n@keyframes float {\\n  0% { transform: translate(0px, 0px) scale(1); }\\n  33% { transform: translate(40px, -60px) scale(1.1); }\\n  66% { transform: translate(-30px, 30px) scale(0.9); }\\n  100% { transform: translate(0px, 0px) scale(1); }\\n}\\n\\n.neon-text-cyan {\\n  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);\\n}\\n.neon-text-purple {\\n  text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);\\n}\\n\\n::selection {\\n  background-color: rgba(0, 240, 255, 0.2);\\n  color: #00F0FF;\\n}\\`)\""
+		},
+		{
+			"label": "Execute CSS Write",
+			"type": "shell",
+			"command": "node write_css.js"
+		},
+		{
+			"label": "rewrite page.tsx",
+			"type": "shell",
+			"command": "node -e \"const fs=require('fs'); const code=\\`import React from 'react';\\nimport AmbientBackground from '@/components/AmbientBackground';\\nimport Hero from '@/components/Hero';\\nimport SkillsTrack from '@/components/SkillsTrack';\\nimport ProjectShowcase from '@/components/ProjectShowcase';\\n\\nexport default function Home() {\\n  return (\\n    <>\\n      <AmbientBackground />\\n      \\n      {/* Navbar Minimal */}\\n      <nav className='fixed top-0 z-50 w-full glass border-b-0 border-white/5'>\\n        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>\\n          <div className='flex h-16 items-center justify-between'>\\n            <span className='text-xl font-bold tracking-tight text-white glow'>KB.</span>\\n            <div className='flex gap-6'>\\n              <a href='#about' className='text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors'>About</a>\\n              <a href='#projects' className='text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors'>Projects</a>\\n            </div>\\n          </div>\\n        </div>\\n      </nav>\\n\\n      <main className='relative z-10 flex flex-col gap-12 overflow-hidden'>\\n        <Hero />\\n        <SkillsTrack />\\n        <ProjectShowcase />\\n      </main>\\n\\n      {/* Footer Minimal */}\\n      <footer className='relative z-10 border-t border-white/10 mt-24 py-12 text-center'>\\n        <div className='max-w-7xl mx-auto px-4'>\\n          <h2 className='text-2xl font-bold text-white mb-4 tracking-tight'>Let's build something <span className='neon-text-cyan text-cyan-400'>intelligent.</span></h2>\\n          <p className='text-gray-400 mb-8 max-w-xl mx-auto'>\\n            Currently open to AI Full Stack Engineer / Backend Internships. Reach out to discuss opportunities.\\n          </p>\\n          <a href='mailto:kartikbajaj.me@gmail.com' className='inline-block px-8 py-3 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform'>\\n            Get In Touch\\n          </a>\\n          <p className='mt-12 text-sm text-gray-600'>\\n            © {new Date().getFullYear()} Kartik Bajaj. Crafted with code and antigravity.\\n          </p>\\n        </div>\\n      </footer>\\n    </>\\n  );\\n} \\`; fs.writeFileSync('src/app/page.tsx', code);\""
+		},
+		{
+			"label": "Run Write Page",
+			"type": "shell",
+			"command": "node write_page.js"
+		},
+		{
+			"label": "Run Build",
+			"type": "shell",
+			"command": "npm.cmd run build"
+		},
+		{
+			"label": "Run Build After Fix",
+			"type": "shell",
+			"command": "npm.cmd run build"
+		},
+		{
+			"label": "Check lucide",
+			"type": "shell",
+			"command": "node -e \"console.log(Object.keys(require('lucide-react')).filter(k => k.toLowerCase().includes('git')))\""
+		},
+		{
+			"label": "Run Build After Fix 2",
+			"type": "shell",
+			"command": "npm.cmd run build"
+		},
+		{
+			"label": "Run Build Final",
+			"type": "shell",
+			"command": "npm.cmd run build"
+		}
+	]
+}
