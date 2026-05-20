@@ -224,7 +224,7 @@ export default function Home() {
                 <a href="mailto:kartikbajaj.me@gmail.com" className="btn-primary">
                   kartikbajaj.me@gmail.com
                 </a>
-                <a href="/AI Full Stack Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                <a href="https://drive.google.com/file/d/1YepWe1Cn013JRxZWHNmWMyDHI1Ytor0x/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-ghost">
                   Download Resume
                 </a>
               </div>

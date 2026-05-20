@@ -285,7 +285,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 1.1, ease }}
               className="flex flex-wrap gap-3 mt-8 justify-center lg:justify-start"
             >
-              <a href="/AI Full Stack Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href="https://drive.google.com/file/d/1YepWe1Cn013JRxZWHNmWMyDHI1Ytor0x/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 View Resume
               </a>
               <a href="#projects" className="btn-ghost">
